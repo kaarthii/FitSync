@@ -1,0 +1,312 @@
+html {
+    background-color: var(--lightbg);
+}
+
+:root {
+    --primary-color: #28bf96;
+    --primary-color2: #95ddeaff;
+    --primary-color3: #7ec6dcff;
+    --lightbg: #ebf8faff;
+    --darkbg: #0D1117;
+    --text-dark: #111827;
+    --text-light: #6b7280;
+    --white: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+
+
+nav {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 12%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mode{
+    position: absolute;
+    right: 1%;
+}
+#light{
+    position: absolute;
+    visibility: visible;
+    right: 1%;
+}
+#dark{
+    position: absolute;
+    visibility: hidden;
+    right: 1%;
+}
+
+.nav_logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-left: 30px;
+}
+
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.form_box {
+    position: absolute;
+    top: 21%; /* Adjust this value as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 512px;
+    overflow: hidden;
+    z-index: 2;
+    margin-bottom: 50px; /* Adjust this value as needed */
+}
+
+
+header {
+    color: var(--primary-color);
+    font-size: 50px;
+    text-shadow:
+        1px 1px 0 rgba(0, 0, 0, 0.1),
+        -1px 1px 0 rgba(0, 0, 0, 0.1),
+        -1px -1px 0 rgba(0, 0, 0, 0.1),
+        1px -1px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+@keyframes moveleft {
+    0% {
+        left: 50%;
+      }
+    100% {
+        left: 35%;
+      }
+  }
+.two_forms {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    animation-name: moveleft;
+    animation-duration: 1s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+.register_container {
+    width: 100%;
+    max-width: 400px;
+    transition: .5s ease-in-out;
+    padding: 20px;
+    background-color: var(--primary-color2);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input_field {
+    font-size: 17px;
+    color: var(--primary-color);
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: 2px solid var(--primary-color3);
+    margin-bottom: 10px;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+
+
+
+@keyframes appear {
+    0% {
+        height: 0%;
+        width: 0%;
+        visibility: visible;
+      }
+    100% {
+        height: 400px;
+        width: 400px;
+        visibility: visible;
+      }
+  }
+
+.info {
+    position: absolute;
+    top: 55%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    animation-name: appear;
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;  
+    visibility: hidden;
+    border-radius: 10px;
+    background-color: var(--primary-color2);
+
+}
+#infotxt{
+    margin-top: 15px;
+    animation-name: appear;
+    animation-duration: 1ns;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;  
+    visibility: hidden;
+    font-size: 25px;
+    color: #121212;
+    text-shadow:
+        1px 1px 0 rgba(0, 0, 0, 0.1),
+        -1px 1px 0 rgba(0, 0, 0, 0.1),
+        -1px -1px 0 rgba(0, 0, 0, 0.1),
+        1px -1px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation-delay: 1.5s;
+}
+@keyframes appearimg1 {
+    0% {
+        height: 0%;
+        width: 0%;
+        visibility: visible;
+      }
+    100% {
+        height: 350px;
+        width: 218px;
+        visibility: visible;
+      }
+  }
+#infoimg1{
+    animation-name: appearimg1;
+    animation-duration: 0.5s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;  
+    visibility: hidden;
+    animation-delay: 1.5s;
+}
+@keyframes appearimg2 {
+    0% {
+        height: 0%;
+        width: 0%;
+        visibility: visible;
+      }
+    100% {
+        height: 350px;
+        width: 131px;
+        visibility: visible;
+      }
+  }
+#infoimg2{
+    animation-name: appearimg2;
+    animation-duration: 0.5s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;  
+    visibility: hidden;
+    animation-delay: 1.5s;
+}
+@keyframes appearimg3 {
+    0% {
+        height: 0%;
+        width: 0%;
+        visibility: visible;
+      }
+    100% {
+        height: 350px;
+        width: 150px;
+        visibility: visible;
+      }
+  }
+#infoimg3{
+    animation-name: appearimg3;
+    animation-duration: 0.5s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;  
+    visibility: hidden;
+    animation-delay: 1.5s;
+}
+
+
+#i_proc{
+    font-size: 17px;
+    color: var(--primary-color);
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    border: 2px solid var(--primary-color3);
+    margin-bottom: 10px;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+#i_proc:hover {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+#i_veg,
+#i_nonveg {
+    font-size: 17px;
+    color: var(--primary-color);
+    background-color: white;
+    height: 50px;
+    width: 49%;
+    border: 2px solid var(--primary-color3);
+    margin-bottom: 10px;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+
+.input_field:hover,
+.input_field:focus {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+::-webkit-input-placeholder {
+    color: var(--primary-color);
+}
+
+.input_box i {
+    position: relative;
+    top: -35px;
+    left: 17px;
+    color: var(--primary-color);
+}
+
+#submit {
+    font-size: 15px;
+    font-weight: 500;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    background-color: white;
+    height: 45px;
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid var(--primary-color3);
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    visibility: hidden ;
+}
+
+#submit:hover {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}

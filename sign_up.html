@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sign_up_styles.css"/>
+    <title>FitSync</title>
+</head>
+<body style="background: url('s7.jpg') no-repeat; background-size: cover; background-position: center;">
+    <div class="container">
+        <nav>
+            <a href="index.html" class="nav_logo" style="font-size: 3rem;
+            color: #111827; text-decoration: none;">
+                <span style="color: #28bf96">FIT</span>Sync.
+            </a>
+                <div>
+                    <button class="btn" id="loginBtn" onclick="window.location.href='sign_in.html';">Sign In</button>
+                    <button class="btn" id="registerBtn">Sign Up</button>
+                </div>
+            </div>
+        </nav>
+   </div>
+   <div class="form_box">
+       <div class="top">
+           <span>Have an account? <a href="sign_in.html" onclick="login()">Sign in</a></span>
+           <header>Sign Up</header>
+       </div>
+   </div>
+   <div class="two_forms">
+       <div class="register_container">
+           <form class="input_box" action="signup.php" method="POST" onsubmit="return reg_validate(event);">
+               <input type="text" class="input_field" id="fname" name="fname" placeholder="First Name" max="50">
+               <input type="text" class="input_field" id="lname" name="lname" placeholder="Last Name" max="50">
+               <input type="email" class="input_field" id="email" name="email" placeholder="Email">
+               <input type="password" class="input_field" id="password" name="password" placeholder="Password">
+               <input type="password" class="input_field" id="confirm_password" name="confirm_password" placeholder="Confirm password" min="3" max="8">
+               <button type="submit" class="submit" name="submit" onclick="return reg_validate(event)">Register</button>
+           </form>
+       </div>
+   </div>
+<script>
+function reg_validate(event) {
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirm_password = document.getElementById("confirm_password").value;
+
+    var email_regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var password_regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{3,15}$/;
+
+    if (!email_regex.test(email)) {
+        var emailField = document.getElementById("email");
+        emailField.setCustomValidity("Enter valid email id");
+        emailField.reportValidity();
+        event.preventDefault();
+        return false;
+    }
+    else{
+        var emailField = document.getElementById("email");
+        emailField.setCustomValidity('');
+    }
+
+    if (password.length < 3 || password.length > 15) {
+        var passwordField = document.getElementById("password");
+        passwordField.setCustomValidity("Password must be between 3 and 15 characters long.");
+        passwordField.reportValidity();
+        event.preventDefault();
+        return false;
+    }
+
+    if (!password_regex.test(password)) {
+        var passwordField = document.getElementById("password");
+        passwordField.setCustomValidity("Password must contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character.");
+        passwordField.reportValidity();
+        event.preventDefault();
+        return false;
+    }
+    else{
+        var passwordField = document.getElementById("password");
+        passwordField.setCustomValidity('');
+    }
+
+    if (password !== confirm_password) {
+        alert("Passwords do not match");
+        event.preventDefault();
+        return false;
+    }
+
+    return true;
+}
+</script>
+</body>
+</html>

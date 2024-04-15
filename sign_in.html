@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sign_in_style.css"/>
+    <title>FitSync</title>
+</head>
+<body style="background: url('s6.jpg') no-repeat; background-size: cover; background-position: center;">
+    <div class="container">
+        <nav>
+            <a href="index.html" class="nav_logo" style="font-size: 3rem;
+            font-weight:bolder; color: #111827; text-decoration: none;">
+                <span style="color: #28bf96">FIT</span>Sync.
+            </a>
+                
+                <div>
+                    <button class="btn" id="loginBtn">Sign In</button>
+                    <button class="btn" id="registerBtn" onclick="window.location.href= 'sign_up.html';">Sign Up</button>
+                </div>
+            </div>
+        </nav>
+   </div>
+        <div class="form_box">
+            <div class="top">
+                <span>Don't have an account? <a href="sign_up.html" onclick="register()">Sign Up</a></span>
+                <header>Sign In</header>
+            </div>
+        </div>
+        <div class="two_forms">
+            <div class="signin_container">
+                <form class="input_box" action="signin.php" method="POST">
+                    <input type="text" name="username" id="username" class="input_field" placeholder="Username or Email">
+                    <input type="password" name="password" id="password" class="input_field" placeholder="Password">
+                    <button name="submit" type="submit" class="submit">Sign In</button>
+                </form>
+            </div>
+        </div>
+        
+   </div>
+   
+</body>
+</html>
